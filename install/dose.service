@@ -1,0 +1,10 @@
+[Unit]
+Description=Digitalfish Doser
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/python /var/www/html/pycode/dose-check.py > /dev/null 2>&1
+
+
+[Install]
+WantedBy=multi-user.target

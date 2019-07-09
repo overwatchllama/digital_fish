@@ -1,0 +1,10 @@
+[Unit]
+Description=digitalfish Wave-B
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/python /var/www/html/pycode/wave_b.py > /dev/null 2>&1
+
+
+[Install]
+WantedBy=multi-user.target

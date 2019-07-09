@@ -1,0 +1,1 @@
+UPDATE `digitalfish`.`users` SET `password`='123' WHERE  `username`='admin';

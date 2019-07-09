@@ -1,0 +1,11 @@
+
+[Unit]
+Description=Digitalfish ATO
+After=multi-user.target
+
+[Service]
+ExecStart=/usr/bin/python /var/www/html/pycode/ato.py > /dev/null 2>&1
+
+
+[Install]
+WantedBy=multi-user.target

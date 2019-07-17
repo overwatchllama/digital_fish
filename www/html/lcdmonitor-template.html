@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+
+/**** MY CSS ***/
+	html { background-image: url("images/wallpaper.jpg");
+	 -webkit-background-size: cover;
+	 -moz-background-size: cover;
+ 	 -o-background-size: cover;
+	  background-size: cover; }
+
+	.cardfront {
+   	padding:20px;
+   	/*margin: 0% 5% 0% 5% ;*/
+   	background-color: rgba(0,0,0,0.5);
+   	border-radius: 5px;
+   	color: white;
+   	min-height: 350px; }
+    
+    .cardback {
+    padding:20px;
+   	background-color: rgba(0,0,0,0.5);
+   	border-radius: 5px;
+   	color: white;
+   	min-height: 350px; }
+
+   .cardminiheader {
+   	background: red;
+   	height: 5px;
+   	max-width: 100px;
+   	padding-right: 5px;
+   	padding-left: 5px; }
+
+	   .cardmini{
+	   	background-color: rgba(255,255,255,0.2);
+	   	padding: 5px;
+	   	max-width: 100px; }
+
+	.buttonstyle1 { padding: 30px; }
+	.buttonstyle2 { padding: 10px; width: 50px; }
+/**** MY CSS ***/
+
+
+/**** Guages CSS ** */
+
+   #g1 {width: 33%;}
+   #g2 {width: 33%;}
+   #g3 {width: 33%;}
+   .clear:before, .clear:after {content: "";display: table;}
+   .clear:after {clear: both;}
+   .clear {*zoom: 1;}
+   .gauge {display: block;float: left;}
+
+/**** Guages CSS ** */
+
+	</style>
+
+	
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="js/flip.js"></script>
+
+
+</head>
+<body>
+<!-- <button onclick="flipit()">FLIP</button> -->
+<div id="card"> 
+  <div class="front"> 
+    	<div class="cardfront">
+		    <h1>DigitalFish HUD</h1>
+			    <div class="cardminiheader"></div>
+			    <div class="cardmini">25 C</div>
+			    <div class="cardminiheader"></div>
+			    <div class="cardmini">25 C</div>
+			    <br><Br></Br>
+			    <!-- *** GUAGES ***	 -->
+			    <div class="wrapper clear">
+			        <div id="g1" class="gauge"></div>
+			        <div id="g2" class="gauge"></div>
+			        <div id="g3" class="gauge"></div>
+		    	</div>
+		    	<!-- *** GUAGES ***	 -->
+    	</div>
+  	</div> 
+  	
+  <div class="back">
+  	<div class="cardback">
+	    <h1>Manual controls</h1>
+	    	<button class="buttonstyle1">Button1</button>
+	    	<button class="buttonstyle1">Button2</button>
+		    <button class="buttonstyle1">Button3</button>
+		    <button class="buttonstyle1">Button4</button>
+	    	<button class="buttonstyle1">Button5</button>    
+		</div>
+  	</div>   
+</div>
+
+<br>
+<div>
+	<button onclick="flipit()" class="buttonstyle2">FLIP</button>
+</div>
+
+</body>
+
+<!-- **************************** Guages Script Start **************************** -->
+
+    <script src="js/justgauge/raphael-2.1.4.min.js"></script>
+    <script src="js/justgauge/justgage.js"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+        var g1, g2, g3;
+
+        var g1 = new JustGage({
+            id: "g1",
+            value: getRandomInt(0, 100),
+            min: 0,
+            max: 100,
+            title: "Very long title",
+            titleFontColor: "white",
+            valueFontColor: "white",
+            relativeGaugeSize: true,
+            pointer: true,
+            donut: false
+        });
+
+        var g2 = new JustGage({
+            id: "g2",
+            value: getRandomInt(0, 100),
+            min: 0,
+            max: 100,
+            title: "Very long title",
+            titleFontColor: "white",
+            valueFontColor: "white",
+            relativeGaugeSize: true,
+            pointer: true,            
+            donut: false
+        });
+
+        // var g3 = new JustGage({
+        //     id: "g3",
+        //     value: getRandomInt(0, 100),
+        //     min: 0,
+        //     max: 100,
+        //     title: "Very long title",
+        //     titleFontColor: "white",
+        //     valueFontColor: "white",
+        //     label: "label",
+        //     relativeGaugeSize: true,
+        //     pointer: true,
+        //     donut: false
+        // });
+    });
+    </script>
+
+<!-- **************************** Guages Script End **************************** -->
+
+
+
+
+
+
+
+
+</html>
+
+<!-- **************************** Guages Prep Start **************************** -->
+<script type="text/javascript">
+	$("#card").flip({
+  trigger: 'manual'
+});
+
+</script>
+
+<script>
+function flipit() {
+$("#card").flip('toggle');
+}
+</script>
+
+<!-- **************************** Guages Prep END **************************** -->

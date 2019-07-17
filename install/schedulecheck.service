@@ -1,5 +1,5 @@
 [Unit]
-Description=digitalfish Schedule Check
+Description=DigitalFish Schedule Check
 After=multi-user.target
 
 [Service]

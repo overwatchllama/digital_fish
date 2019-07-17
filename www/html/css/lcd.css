@@ -1,0 +1,98 @@
+.bottombackground {
+  background-color: #590800;
+  color: white;
+}
+
+.topbackground {
+  background-color: #122f63;
+  color: white;
+  z-index: 99;
+}
+
+
+
+.lcdobjectwidth {
+  width: 145px !important;
+  height: 80px;
+    /*white-space:normal !important;*/
+  /*word-wrap: normal;  */
+  /*padding-top: 16px;*/
+  /*height: 100%;*/
+  /*text-transform: uppercase;*/
+  /*font-size: 1em;*/
+  /*font-family: monospace;*/
+  /*font-weight: bold;*/
+  /*background: #232323;*/
+  
+  /*padding: 5px;*/
+  /*height: 20px;*/
+}
+
+.alert {
+  padding: 0px !important;
+  padding-left: 5px !important;
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+
+  .on {
+    
+    width: 25px !important;
+    text-align: center;
+    padding-top: 8px;
+    height: 80px !important;
+    /*margin-left: 0px;*/
+      /*border: solid 1px;*/
+      background-color: #28a745;
+      border-radius: 5px;
+      border-left: solid 1px darkgreen;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+      /*border-color: darkgreen !important;            */
+      float: left;
+      box-shadow: 0px 5px 90px 10px lightgreen;  
+
+
+  }
+  .off {
+     width: 25px !important;
+    text-align: center;
+    padding-top: 8px;
+    height: 80px !important;
+    /*margin-left: 0px;*/
+      /*border: solid 1px;*/
+      background-color: black;
+      border-radius: 5px;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+      /*border-color: darkgreen !important;            */
+      float: left;
+  }
+
+.surround {
+margin-top: 10px;
+padding:10px;
+  background-color: black;
+  border-radius: 5px;
+
+}
+
+
+.lcdborder {
+  margin-top: 10px;
+  /*border-color: white;*/
+  border-style: solid; 
+  border-color: white;
+  border-radius: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+  min-height: 460px;
+  /*padding-left: 10px;*/
+  /*border-color: white;*/
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, #89FF00 0 2px 50px;
+}
+
+.buttonactive {
+  /*color:green;  */
+}
+

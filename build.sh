@@ -71,6 +71,25 @@ echo "Docker Container ${nodename} exists, configuration assumed to be correct."
 V_BUILD="NO"
 fi
 }
+dockzer(){
+docker stop webserver
+docker system prune -a -f
+export imagename=webserver
+export nodename=webserver
+export portum=1521
+export internalip="10.10.10.11"
+export netnam="priv"
+export SUBNET=10.10.10.0
+export NETNAME=priv
+docker build -t ${imagename} .
+docker create --privileged --name ${nodename} -h ${nodename} --shm-size=2048m --memory-swap=4096m --memory=3072m -p ${portnum}:1521 webserver tail -f /dev/null
+docker network create --subnet=${SUBNET}/24 ${NETNAME}
+docker network connect --ip ${internalip} ${netnam} ${nodename}
+docker start ${nodename} > /dev/null 2>&1
+docker exec -it webserver /bin/bash
+
+}
+
 
 while getopts "cb" opt; do
   case "${opt}" in

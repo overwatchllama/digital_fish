@@ -1,0 +1,19 @@
+{
+  "name": "digital_fish",
+  "author": "Christopher Miller <chris.miller@digi.fish>",
+  "version": "1.0.0",
+  "description": "Digital Fish",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon ./server.js",
+    "ui": "browser-sync start --proxy=localhost:8080 --files='**/*.css, **/*.pug, **/*.js' --ignore=node_modules --reload-delay 10 --no-ui --no-notify"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "nodemon": "^1.19.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "pug": "^2.0.4"
+  }
+}

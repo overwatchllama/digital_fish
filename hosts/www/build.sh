@@ -52,21 +52,26 @@ docker stop webserver
 docker system prune -a -f
 export imagename=webserver
 export nodename=webserver
-export portum=8080
+export portum=1521
 export internalip="10.10.10.11"
 export netnam="priv"
 export SUBNET=10.10.10.0
 export NETNAME=priv
-docker build -t webserver .
-docker create --name ${nodename} -h ${nodename} -p ${portnum}:8080 ${imagename} tail -f /dev/null
+docker build -t ${imagename} .
+docker create --privileged --name ${nodename} -h ${nodename} --shm-size=2048m --memory-swap=4096m --memory=3072m -p ${portnum}:1521 ${imagename} tail -f /dev/null
 docker network create --subnet=${SUBNET}/24 ${NETNAME}
 docker network connect --ip ${internalip} ${netnam} ${nodename}
 docker start ${nodename} > /dev/null 2>&1
 docker exec -it webserver /bin/bash
 
 #docker build -t webserver .
-#docker run -p 49160:8080 -d webserver
+#docker create --privileged --name ${nodename} -h webserver --shm-size=2048m --memory-swap=4096m --memory=3072m -p 1521:1521 webserver tail -f /dev/null
+#docker network create --subnet=10.10.10.0/24 priv
+#docker network connect --ip "10.10.10.11" priv webserver
+#docker start webserver > /dev/null 2>&1
 #docker exec -it webserver /bin/bash
+
+
 
 }
 
